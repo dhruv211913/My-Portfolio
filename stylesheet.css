@@ -247,7 +247,7 @@
  }
 
  .third-section {
-     height: 150vh;
+     height: 160vh;
      background-color: #041c34;
      justify-content: space-around;
  }
@@ -295,8 +295,9 @@
 
  .project-container {
      display: flex;
-     margin-left: 150px;
+     margin-left: 80px;
      margin-top: 120px;
+     justify-content: space-around;
      /* Adjust the margin-top as needed */
  }
 
@@ -306,6 +307,7 @@
      box-shadow: 0 0 3px 0 #ccc;
      width: 350px;
      align-items: center;
+    
 
 
      /* Align items vertically */
