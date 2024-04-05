@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barrio&family=Truculenta:opsz,wght@12..72,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fb0e66124e.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barrio&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Truculenta:opsz,wght@12..72,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Include AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Include AOS JavaScript -->
+
+
+
+    <title>Dhruv Portfolio</title>
+
+</head>
+<script>
+
+
+
+
+    var TxtType = function (el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function () {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+        }
+
+        setTimeout(function () {
+            that.tick();
+        }, delta);
+    };
+
+    window.onload = function () {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+
+
+
+</script>
+
+
+<body>
+    <section class="firstsection" id="firstsection">
+        <div class="left">
+
+            <p class='primary-text'>Hello, I'M
+                <span class='highlighted-text'>DHRUV BHATIA</span>
+            </p>
+            <div class="role">
+
+                <span class="static-txt">I am a
+                    <span class="typewrite" data-period="2000" data-type='[ "FRONTEND DEVELOPER","BACKEND DEVELOPER" ]'>
+
+                    </span>
+                </span>
+
+            </div>
+            <div class="content">
+                <p>I make websites that are easy to use, meet the client's needs, and work well even as they grow. I pay
+                    close attention to every little thing to make sure they work fast and are reliable.</p>
+            </div>
+            <div class="icons">
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/dhruv-bhatia-37a218212/"> <i
+                                class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a href="https://www.instagram.com/dhruv2119"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li> <a href="https://github.com/dhruv211913"> <i class="fa-brands fa-github"></i></a></li>
+                    <li> <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a></li>
+                </ul>
+            </div>
+            <div class="left-btn">
+               
+                <a download href="Dhruv_Resume (3).pdf  "><button class="resumebtn">Get Resume</button></a>
+            </div>
+        </div>
+        <div class="right">
+            <img class="img-right" src="/development-4536630_1280.webp" />
+        </div>
+        <hr>
+    </section>
+
+    <section class="second-section" id="second-section">
+        <div class="second-left">
+            <div class="left-img">
+                <img src="About-Me.webp" alt="aboutme" />
+            </div>
+            <div class="left-img-arrow">
+                <img src="arrow.jpg" />
+            </div>
+
+        </div>
+
+        <div class="second-right">
+            <div class="about-content">
+                <p>
+                    I am a Developer and Designer based in Faridabad, India 🌍. I'm always seeking new challenges and
+                    opportunities to expand my skills and make a positive impact in the world of web development.
+                    Throughout my life, I have spoken, read, and written English fluently. Currently, I'm exploring
+                    the MERN Stack 👩🏾‍💻 as part of my skill set. Outside of coding, I enjoy staying up-to-date with
+                    the latest developments in web technology, and sometimes listening to music 🎧.My goal is to fulfill
+                    the objectives of my clients using my technical skills and creativity.Let's create something unique
+                    together! 😎🚀
+                </p>
+            </div>
+            <div class="details-container">
+                <div class="details">
+                    <h4>
+                        <span>Age:</span>
+                        24
+                    </h4>
+                    <h4><span>Gender:</span>
+                        male
+                    </h4>
+                    <h4><span>Language:</span>
+                        English/Hindi
+                    </h4>
+
+                </div>
+                <div class="details-2">
+                    <h4>
+                        <span>Phone:</span>
+                        +91-8826080705
+                    </h4>
+                    <h4><span>Email:</span>
+                        dhruvbh39@gmail.com
+                    </h4>
+                    <h4><span>Address:</span>
+                        Faridabad,India-121001
+                    </h4>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="third-section" id="third-section">
+        <div class="wrapper">
+            <div class="third-left">
+                <h1>Projects & Experiences</h1>
+                <p>You can find all of my projects on my profile on Github. You can view my activities, contributions
+                    and code on these projects.I am always looking for new projects and Ideas. You can also reach out
+                    to me on any of the social media channels mentioned below.</p>
+
+            </div>
+            <div class="third-right">
+                <div class="third-right-img">
+                    <img src="/network-cartoon-png-favpng-UjmyBJS1DbF3n7Cr74Fj61erU.jpg" alt="logo" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="project-container" data-aos="fade-up" data-aos-duration="2000">
+            <div class="projects">
+                <img src="/Screenshot (2).png" alt="logo" />
+
+                <div class="project-details">
+                    <h4>E-Dashboard</h4>
+                    <p>Jan 2024</p>
+
+                </div>
+                <div class="project-btn">
+                    <a href="https://github.com/dhruv211913"><button>Live Project</button></a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="fourth-section" id="fourth-section">
+        <div class="skills">
+            <h2>Skills
+                <span>&</span>
+                Abilities
+            </h2>
+        </div>
+
+        <div class="skill-cards">
+            <div class="cards">
+                ⚡ Building responsive website front end using Html,Css,Js and ReactJS
+            </div>
+            <div class="cards">
+                ⚡ Creating application backend in Node JS & Express JS
+            </div>
+        </div>
+
+
+        <div class="s-container">
+            <div class="skill-box" data-aos="fade-right" data-aos-duration="2000">
+                <div class="img-container">
+                    <img src="/react.jpg" alt="logo" loading="lazy" />
+                    <h3>React.JS</h3>
+                </div>
+
+            </div>
+            <div class="skill-box" data-aos="fade-right" data-aos-duration="2000">
+                <div class="img-container">
+                    <img src="/redux.jpg" alt="logo" loading="lazy" />
+                    <h3>Redux</h3>
+                </div>
+            </div>
+            <div class="skill-box" data-aos="fade-right" data-aos-duration="2000">
+                <div class="img-container1">
+                    <img src="/javascript.jpg" alt="logo" loading="lazy" />
+                    <h3>JavaScript</h3>
+                </div>
+            </div>
+            <div class="skill-box" data-aos="fade-right" data-aos-duration="2000">
+                <div class="img-container">
+                    <img src="/node.jpg" alt="logo" loading="lazy" />
+                    <h3>Node.JS</h3>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="s-container1">
+            <div class="skill-box" data-aos="fade-right" data-aos-duration="2000">
+                <div class="img-container">
+                    <img src="/express.jpg" alt="logo" loading="lazy" />
+                    <h3>Express.JS</h3>
+                </div>
+            </div>
+            <div class="skill-box" data-aos="fade-right" data-aos-duration="2000">
+                <div class="img-container">
+                    <img src="/html.jpg" alt="logo" loading="lazy" />
+                    <h3>HTML</h3>
+                </div>
+            </div>
+
+            <div class="skill-box" data-aos="fade-right" data-aos-duration="2000">
+                <div class="img-container">
+                    <img src="/css.jpg" alt="logo" loading="lazy" />
+                    <h3>CSS</h3>
+                </div>
+            </div>
+
+            <div class="skill-box" data-aos="fade-right" data-aos-duration="2000">
+                <div class="img-container">
+                    <img src="/bootstrap.jpg" alt="logo" loading="lazy" />
+                    <h3>Bootstrap</h3>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="s-container">
+            <div class="skill-box" data-aos="fade-right" data-aos-duration="2000">
+                <div class="img-container3">
+                    <img src="/mongodb.jpg" alt="logo" loading="lazy" />
+                    <h3>Mongodb</h3>
+                </div>
+            </div>
+
+            <div class="skill-box" data-aos="fade-right" data-aos-duration="2000">
+                <div class="img-container3">
+                    <img src="/mysql.jpg" alt="logo" loading="lazy" />
+                    <h3>My-SQL</h3>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    <section class="fifth-section">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-header">
+                    <h3>Quick Links</h3>
+                </div>
+                <div class="footer-link">
+                    <a href="#firstsection">
+                        <i class="fa-solid fa-angles-right"></i>
+                        <p>Home</p>
+
+                    </a>
+                    <a href="#second-section">
+                        <i class="fa-solid fa-angles-right"></i>
+                        <p>About Me</p>
+                    </a>
+                    <a href="#third-section">
+                        <i class="fa-solid fa-angles-right"></i>
+                        <p>Projects and Experiences</p>
+                    </a>
+                    <a href="#fourth-section">
+                        <i class="fa-solid fa-angles-right"></i>
+                        <p>Skills & Abilities</p>
+                    </a>
+
+                </div>
+
+            </div>
+            <div class="footer-right">
+                <div class="footer-header">
+                    <h3>Contact Info</h3>
+                </div>
+                <div class="footer-contact">
+                    <span><i class="fa-solid fa-phone-flip"></i></span>
+                    <p>+91-8826080705</p>
+                </div>
+
+                <div class="footer-contact">
+                    <span><i class="fa-regular fa-envelope"></i></span>
+                    <p>dhruvbh39@gmail.com</p>
+
+                </div>
+                <div class="footer-contact">
+                    <span><i class="fa-solid fa-location-dot"></i></span>
+                    <p>Faridabad,India-121001</p>
+
+                </div>
+                <div class="footer-icons">
+                    <div class="bottom-icons">
+                        <a href="https://www.facebook.com/">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://github.com/dhruv211913">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/dhruv2119">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/dhruv-bhatia-37a218212/">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+           
+
+
+        </div>
+        <div class="line-container">
+            <hr class="line">
+        </div>
+        <div class="headlast">
+            <h2>Made with ❤️ by Dhruv</h2>
+
+        </div>
+      
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init();
+        });
+
+    </script>
+
+</body>
+
+
+</html>
